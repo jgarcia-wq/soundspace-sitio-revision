@@ -1,0 +1,4 @@
+# Copia intacta del sitio desplegado, solo para diffs locales
+_original/
+_artifact-test.html
+.DS_Store

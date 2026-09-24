@@ -1,0 +1,3 @@
+# Sitio en revisión — no indexar.
+User-agent: *
+Disallow: /
