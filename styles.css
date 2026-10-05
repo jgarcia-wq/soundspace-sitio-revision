@@ -2631,3 +2631,50 @@ form .button {
     display: none;
   }
 }
+
+/* Soundspace Academy Records */
+.spotify-embed {
+  margin: 28px 0 44px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.spotify-embed iframe {
+  display: block;
+  border: 0;
+}
+.releases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 26px 20px;
+}
+.release a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.release img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--panel, #202021);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+.release a:hover img,
+.release a:focus-visible img {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+.release h3 {
+  margin: 12px 0 2px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.release p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted, #b0adae);
+}
