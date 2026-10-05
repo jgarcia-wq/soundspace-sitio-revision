@@ -261,25 +261,16 @@ p {
   width: 100%;
   height: auto;
 }
-/* Emblema que gira como un vinil en el plato */
 .brand .brand-mark {
   width: 27%;
   flex-shrink: 0;
-  animation: brandSpin 6s linear infinite;
   transform-origin: 50% 50%;
-}
-.brand:hover .brand-mark,
-.brand:focus-visible .brand-mark {
-  animation-duration: 1.8s;
 }
 .brand .brand-word {
   width: 73%;
 }
-@keyframes brandSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* brandSpin: retirado a petición del cliente (28-sep). Se conserva por si se retoma.
+@keyframes brandSpin { to { transform: rotate(360deg); } } */
 .site-header nav {
   display: flex;
   align-items: center;
@@ -2593,6 +2584,50 @@ form .button {
     transform: none !important;
   }
   .scroll-fader {
+    display: none;
+  }
+}
+
+/* Acceso directo a WhatsApp, sin pasar por el quiz ni por agendar visita */
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #052913;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.wa-float:hover,
+.wa-float:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+.wa-float svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+@media (max-width: 700px) {
+  .wa-float {
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    padding: 12px;
+  }
+  .wa-float span {
     display: none;
   }
 }
